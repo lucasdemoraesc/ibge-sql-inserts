@@ -1,0 +1,28 @@
+DROP TABLE [IBGE]
+CREATE TABLE [Estados]
+(
+    [Id] CHAR(7) NOT NULL,
+    [Sigla] CHAR(2) NULL,
+	[Nome] NVARCHAR(80) NULL,
+    CONSTRAINT [PK_ESTADOS] PRIMARY KEY ([Id])
+);
+GO
+
+CREATE TABLE [Municipios]
+(
+    [Id] CHAR(7) NOT NULL,
+    [Cidade] NVARCHAR(80) NULL,
+    [Estado] CHAR(7) NULL,
+    CONSTRAINT [PK_MUNICIPIOS] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_MUNICIPIOS_ESTADOS] FOREIGN KEY (Estado) REFERENCES Estados(Id)
+);
+GO
+
+CREATE INDEX [IX_MUNICIPIOS_Id] ON [Municipios] ([Id]);
+GO
+
+CREATE INDEX [IX_MUNICIPIOS_Cidade] ON [Municipios] ([Cidade]);
+GO
+
+CREATE INDEX [IX_MUNICIPIOS_Estado] ON [Municipios] ([Estado]);
+GO
