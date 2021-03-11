@@ -1,7 +1,7 @@
 DROP TABLE [IBGE]
 CREATE TABLE [Estados]
 (
-    [Id] CHAR(7) NOT NULL,
+    [Id] CHAR(2) NOT NULL,
     [Sigla] CHAR(2) NULL,
 	[Nome] NVARCHAR(80) NULL,
     CONSTRAINT [PK_ESTADOS] PRIMARY KEY ([Id])
@@ -12,7 +12,7 @@ CREATE TABLE [Municipios]
 (
     [Id] CHAR(7) NOT NULL,
     [Cidade] NVARCHAR(80) NULL,
-    [Estado] CHAR(7) NULL,
+    [Estado] CHAR(2) NULL,
     CONSTRAINT [PK_MUNICIPIOS] PRIMARY KEY ([Id]),
     CONSTRAINT [FK_MUNICIPIOS_ESTADOS] FOREIGN KEY (Estado) REFERENCES Estados(Id)
 );
