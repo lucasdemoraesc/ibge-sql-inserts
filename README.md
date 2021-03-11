@@ -6,7 +6,7 @@ Atualmente os dados da API são obtidos através de uma consulta (Power Query) e
 
 Os dados da planilha podem ser facilmente atualizados, basta rodar a consulta. Mas a atualização dos scripts ainda deve ser feita manualmente.
 
-## :white_check_mark: Possíveis melhorias
+## Possíveis melhorias
 
 - [ ] Automatizar a atualização dos scripts
 
